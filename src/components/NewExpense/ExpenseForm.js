@@ -10,56 +10,19 @@ const ExpenseForm = (props) => {
   // Date
   const [enteredDate, setEnteredDate] = useState("");
 
-  //////////////////////////////////////////////////
-  // ALTERNATIVE WAY - SINGLE useState
-  // ***We can also do the same job by using single useState
-  //   const [userInput, setUserInput] = useState({
-  //     enteredTitle: "",
-  //     enteredAmount: "",
-  //     enteredDate: "",
-  //   });
-  // !!!!!This also isn't ideal because React schedules updates so if we have a lot of them at the same time, there is big possibility that we wont have the latest snapshot of the previous state. Whenever our state depends on a previous state we should use functio form. In that way, we will always have latest snapshot of our previous state.
-  //  !!!! setUserInput((previousState) => {
-  //       return {...previousState, enteredTitle: event.target.value}
-  //   })
-
   // Title
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-
-    //////////////////////////////////////////////////
-    // ALTERNATIVE WAY - SINGLE useState
-    // setUserInput({
-    // **We need to copy current state of the object (... operator) because if we would just change the enteredTitle like below, we would owerwrite other two key-value pairs
-    //   ...userInput,
-    //   enteredTitle: event.target.value,
-    // });
   };
 
   // Amount
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-
-    //////////////////////////////////////////////////
-    // ALTERNATIVE WAY - SINGLE useState
-    // setUserInput({
-    // ***We need to copy current state of the object (... operator) because if we would just change the enteredTitle like below, we would owerwrite other two key-value pairs
-    //   ...userInput,
-    //   enteredAmount: event.target.value,
-    // });
   };
 
   // Date
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-
-    //////////////////////////////////////////////////
-    // ALTERNATIVE WAY - SINGLE useState
-    // setUserInput({
-    // ***We need to copy current state of the object (... operator) because if we would just change the enteredTitle like below, we would owerwrite other two key-value pairs
-    //   ...userInput,
-    //   enteredDate: event.target.value,
-    // });
   };
 
   const submitHandler = (event) => {
